@@ -1,0 +1,173 @@
+{
+    "add_is_visible": true,
+    "category": "input forms",
+    "default_dim": {
+        "height": 20,
+        "width": 20
+    },
+    "display": "Loader percentage",
+    "events": {
+        "AAK": {
+            "caption": "Loading complete",
+            "name": "loading_complete"
+        }
+    },
+    "fields": {
+        "AAD": {
+            "caption": "Additional time (t_add)",
+            "default_val": 2,
+            "doc": "How much time to reach 100% once the event has triggered (value in seconds)",
+            "editor": "DynamicValue",
+            "name": "additional_time",
+            "rank": 2,
+            "value": "number"
+        },
+        "AAE": {
+            "caption": "Loader bar ID",
+            "doc": "The ID of the loader element you want to govern the width of",
+            "editor": "DynamicValue",
+            "name": "loader_bar_id",
+            "rank": 4,
+            "value": "text"
+        },
+        "AAF": {
+            "caption": "Progress completed",
+            "default_val": false,
+            "doc": "When the process is complete, set this field to yes and then the loader bar will go to 100% in the time specified in the \"additional time\" field",
+            "editor": "DynamicValue",
+            "name": "progress_completed",
+            "rank": 5,
+            "value": "boolean"
+        },
+        "AAG": {
+            "caption": "Run",
+            "default_val": false,
+            "doc": "The loader bar will only run if this is set to yes",
+            "editor": "DynamicValue",
+            "name": "run",
+            "rank": 7,
+            "value": "boolean"
+        },
+        "AAH": {
+            "caption": "Pass through text",
+            "doc": "This text is exposed when the \"Loading complete\" event is triggered",
+            "editor": "DynamicValue",
+            "name": "pass_through_text",
+            "optional": true,
+            "rank": 8,
+            "value": "text"
+        },
+        "AAL": {
+            "caption": "Overflow hidden",
+            "default_val": false,
+            "doc": "If your parent element of your target element has rounded corners, checking this will force the target element to also have rounded corners",
+            "editor": "Checkbox",
+            "name": "overflow_hidden",
+            "rank": 11
+        },
+        "AAM": {
+            "caption": "Time to 95%",
+            "default_val": 30,
+            "doc": "How fast the percentage approaches the R value in seconds. A value of 50 will be 50 seconds to get to 95% of the R value",
+            "editor": "DynamicValue",
+            "name": "x_95",
+            "rank": 0,
+            "value": "number"
+        },
+        "AAN": {
+            "caption": "R",
+            "default_val": 80,
+            "doc": "Value the output will reach at infinity if \"Progress completed\" field never switches to \"yes\". Value needs to be between 0 and 100",
+            "editor": "DynamicValue",
+            "name": "r_factor",
+            "rank": 1,
+            "value": "number"
+        },
+        "AAR": {
+            "caption": "Log percentage to console",
+            "default_val": false,
+            "doc": "Checking this will log the value of the progress bar to the console for debugging purposes",
+            "editor": "Checkbox",
+            "name": "log_to_console",
+            "rank": 12
+        },
+        "AAU": {
+            "caption": "Increment (ms)",
+            "default_val": 50,
+            "doc": "How smooth the loader is. The lower the number the smoother it is",
+            "editor": "StaticNumber",
+            "name": "increment",
+            "rank": 3
+        },
+        "AAW": {
+            "caption": "Pass through data type",
+            "editor": "custom_type",
+            "name": "pass_through_data_type",
+            "optional": true,
+            "rank": 9
+        },
+        "AAX": {
+            "caption": "Pass through object",
+            "editor": "DynamicValue",
+            "name": "pass_through_object",
+            "optional": true,
+            "rank": 10,
+            "value": "custom_data_AAW"
+        },
+        "AAZ": {
+            "caption": "Complete after x seconds",
+            "doc": "If this has a value, progress completed field will be ignored and the progress bar will switch to phase 2 after this amount of seconds",
+            "editor": "DynamicValue",
+            "name": "complete_after_x",
+            "optional": true,
+            "rank": 6,
+            "value": "number"
+        },
+        "AAa": {
+            "caption": "Unround bottom right",
+            "default_val": false,
+            "doc": "If ticked, when progress is completed, the bottom right edge of the loader bar will be unrounded",
+            "editor": "Checkbox",
+            "name": "unround_bottom_right",
+            "rank": 13
+        }
+    },
+    "icon": "ion-android-checkbox-blank",
+    "property_applications": {
+        "resizable": true
+    },
+    "states": {
+        "AAI": {
+            "caption": "Progress percentage",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "progress_percentage",
+            "value": "number"
+        },
+        "AAS": {
+            "caption": "Elapsed time",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "elapsed_time",
+            "value": "number"
+        },
+        "AAT": {
+            "caption": "Pass through text",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "pass_through_text",
+            "value": "text"
+        },
+        "AAY": {
+            "caption": "Pass through object",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "pass_through_object",
+            "value": "custom_data_AAW"
+        }
+    }
+}

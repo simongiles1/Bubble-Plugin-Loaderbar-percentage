@@ -1,0 +1,13 @@
+{
+    "categories": {
+        "0": "technical",
+        "1": "analytics"
+    },
+    "demo_page": "https://progress-bar-demo.bubbleapps.io/version-test",
+    "description": "Defines the value of a loader bar. Create any custom design and change the width of the element as the returned value (\"progress percentage\") of this plugin.\n\nThis is designed for events where you don't know how long they are going to take to complete (i.e. API response times like chatGPT).\n\nThe underlying math defines two formulas. The first formula dictates the value of the loader bar from 0 to the r value and the second formula dictates the value from the r value to 100%. If the event (i.e. the API call) you're trying to create the loader bar for never completes, the loader bar will take infinitely long to reach the r value. If the event completes in 5 seconds and the loader bar has reach 50%, say, the second formula will kick in and smoothly transition the loader bar to quickly take the remaining percentage to 100%.\n\n\nf_1 is the formula governing 0 to the r value and f_2 is from the r value to 100%.\n\nThe plugin allows you to specify the following values:\nx_95 = the time it takes to reach 95% of final value. This is basically how fast the loader bar starts out\nk = the shape of f_1 (lower values will cause the output to approach the maximum at a much slower rate and vice versa\nt_add = How long you want f_2 to run for (once the plugin switches to using f_2, the loader bar will take an additional t_add seconds to complete (i.e. reach 100%))\n",
+    "image": "//meta-q.cdn.bubble.io/f1702192855961x544484342077255360/Loading%20bar.jpg",
+    "license": "open_source",
+    "link": "https://bubble.io/page?name=index&id=progress-bar-demo&test_plugin=1702186381711x849618848776978400_current&tab=tabs-1",
+    "name": "Loaderbar percentage",
+    "plugin_instructions": "1. Add the Loaderpercentage element to your page\n2. Create a group element on the page that is set to 0% width and give it an id attribute. Put that same id attribute value into the corresponding value in the plugin\n3. The \"Progress completed\" field must start out as evaluating to \"no\" and then be switched to \"yes\" when you want the plugin to transfer into the second phase (i.e. complete the progress)\n4. The \"Run\" field must be set to \"yes\" for the entire duration of the progress bar. This should be set to \"no\" when the event \"A Loader percentage loading complete\" fires.\n\nTo see it in action, check out the demo link"
+}
